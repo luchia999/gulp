@@ -78,7 +78,6 @@ function clean() {
 
 function htmlmin() {
     return gulp
-      .src('src/*.html')
       .pipe(
         html({ 
           collapseWhitespace: true 
