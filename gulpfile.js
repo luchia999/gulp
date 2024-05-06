@@ -76,11 +76,16 @@ function clean() {
     return deleteAsync(['dist/**'])
 }
 
-function html(){
-    return gulp.src('src/*.html')
-      .pipe(htmlmin({ collapseWhitespace: true }))
+function htmlmin() {
+    return gulp
+      .src('src/*.html')
+      .pipe(
+        html({ 
+          collapseWhitespace: true 
+        })
+      )
       .pipe(gulp.dest('dist'));
-  };
+  }
 
 function svg () {
    return gulp.src('src/assets/*.svg')
@@ -94,11 +99,11 @@ function svg () {
    .pipe(gulp.dest('src/assets/'));
 }
 
-export { styles, clean, html, copy, svg, scripts, server, watch };
+export { styles, clean, htmlmin, copy, svg, scripts, server, watch };
 
-export default gulp.series(clean, gulp.parallel(copy, html,  styles, scripts ), gulp.parallel(server, watch))
+export default gulp.series(clean, gulp.parallel(copy, htmlmin,  styles, scripts ), gulp.parallel(server, watch))
 
-export let build = gulp.series(clean, html, copy, styles, scripts );
+export let build = gulp.series(clean, htmlmin, copy, styles, scripts );
 
 
 
