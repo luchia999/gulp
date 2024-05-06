@@ -1,0 +1,1 @@
+@font-face{font-family:"Open Sans";src:local("Open Sans"),url(fonts/OpenSans-Regular.ttf) format("truetype");font-weight:400;font-style:normal}*{-webkit-box-sizing:border-box;box-sizing:border-box}body{font-family:"Open Sans"}.btn{display:inline-block;padding:.8em 2em;border:0}.btn--primary{background-color:green;color:#fff}.btn--secondary{background-color:purple;color:#fff}
